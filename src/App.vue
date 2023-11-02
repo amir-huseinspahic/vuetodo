@@ -26,12 +26,6 @@ const editTask = (taskID, newText) => {
     if (element.id === taskID) element.text = newText
   });
 }
-
-const resortArray = (newArray) => {
-  tasks = newArray;
-  console.log(tasks)
-}
-
 </script>
 
 <template>
@@ -39,7 +33,7 @@ const resortArray = (newArray) => {
     <div id="app-header"><h1 class="app-header-text">TODO Vue</h1></div>
 
     <TaskInput @create-new-task="addTask" />
-    <TaskList :tasks="tasks" @resort-array="resortArray" @remove-task="removeTask" @edit-task="editTask"/>
+    <TaskList :tasks="tasks" @remove-task="removeTask" @edit-task="editTask"/>
   </div>
 </template>
 
