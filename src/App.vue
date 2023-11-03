@@ -3,6 +3,7 @@ import { ref, provide } from 'vue'
 
 import TaskInput from './components/TaskInputComponent.vue'
 import TaskList from './components/TaskList/TaskListComponent.vue'
+import LinksFooter from './components/Links.vue'
 
 let id = 0;
 let tasks = ref([
@@ -35,10 +36,10 @@ const editTask = (taskID, newText) => {
     <TaskInput @create-new-task="addTask" />
     <TaskList :tasks="tasks" @remove-task="removeTask" @edit-task="editTask"/>
   </div>
+  <LinksFooter />
 </template>
 
 <style>
-
 .wrapper {
   background-color: #384152;
   padding: 3px;
